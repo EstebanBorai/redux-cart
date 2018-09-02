@@ -1,0 +1,35 @@
+{
+  "name": "redux-cart",
+  "version": "1.0.0-2",
+  "description": "A Shopping Cart Reducer for Redux",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./dist",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estebanborai/redux-cart.git"
+  },
+  "keywords": [
+    "redux",
+    "shopping",
+    "cart",
+    "shopping-cart"
+  ],
+  "author": "Esteban Borai <estebanborai@outlook.com> (https://github.com/estebanborai)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estebanborai/redux-cart/issues"
+  },
+  "homepage": "https://github.com/estebanborai/redux-cart#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "eslint": "^5.5.0"
+  },
+  "dependencies": {
+    "immutable": "^3.8.2"
+  }
+}
