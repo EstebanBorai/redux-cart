@@ -4,7 +4,7 @@
     alt="redux-cart logo"
   />
   <h2 align="center">redux-cart</h2>
-  <em>🛒 A Shopping Cart Reducer for Redux</em>
+  <span align="center">🛒 A Shopping Cart Reducer for Redux</span>
 </p>
 
 ## Installation
