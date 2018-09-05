@@ -2,8 +2,8 @@ import ReduxCartError from './ReduxCartError';
 
 /**
  * 
- * @param {Number} val 
- * @param {Number} val1
+ * @param {Number} a
+ * @param {Number} b
  * Substract using the minimum number as zero.
  * (Natural Numbers Set)
  * If some substraction is less than zero

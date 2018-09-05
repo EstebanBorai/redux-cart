@@ -9,3 +9,4 @@ node_modules
 coverage
 jest.config.js
 __tests__
+assets
