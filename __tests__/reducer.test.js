@@ -1,5 +1,5 @@
 import { reducer } from '../src';
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../src/actions';
+import { ADD_TO_CART, REMOVE_FROM_CART, REMOVE_ITEM } from '../src/actions';
 import { Map } from 'immutable';
 
 describe('Cart Reducer', () => {
@@ -55,5 +55,67 @@ describe('Cart Reducer', () => {
         id
       })
     ).toEqual(initialState);
+  });
+
+  it('should remove 1 of 3 items from the cart', () => {
+    const modifiedState = initialState.setIn(`${id}.quantity`.split('.'), 3);
+    const expectedState = initialState.setIn(`${id}.quantity`.split('.'), 2);
+
+    expect(
+      reducer(modifiedState, {
+        type: REMOVE_ITEM,
+        id,
+        quantity: 1
+      })
+    ).toEqual(expectedState);
+  });
+
+  it('should remove the item from the cart if no more items of the same type are available', () => {
+    const modifiedState = initialState.setIn(`${id}.quantity`.split('.'), 1);
+
+    expect(
+      reducer(modifiedState, {
+        type: REMOVE_ITEM,
+        id,
+        quantity: 1
+      })
+    ).toEqual(initialState);
+  });
+
+  it('should remove 1 item if quantity of items to remove is not defined', () => {
+    const modifiedState = initialState.setIn(`${id}.quantity`.split('.'), 1);
+
+    expect(
+      reducer(modifiedState, {
+        type: REMOVE_ITEM,
+        id,
+        quantity: undefined
+      })
+    ).toEqual(initialState);
+  });
+
+  it('should remove the item from the cart if no more items of the same type are available [not providing quantity]', () => {
+    const modifiedState = initialState.setIn(`${id}.quantity`.split('.'), 1);
+
+    expect(
+      reducer(modifiedState, {
+        type: REMOVE_ITEM,
+        id,
+        quantity: undefined
+      })
+    ).toEqual(initialState);
+  });
+
+  it('should update remaining items [not providing quantity]', () => {
+    const modifiedState = initialState.setIn(`${id}.quantity`.split('.'), 2);
+    const expectedState = initialState.setIn(`${id}.quantity`.split('.'), 1);
+
+    expect(
+      reducer(modifiedState, {
+        type: REMOVE_ITEM,
+        id,
+        quantity: undefined
+      })
+    ).toEqual(expectedState);
   });
 });

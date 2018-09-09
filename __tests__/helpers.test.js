@@ -9,11 +9,7 @@ describe.only('Subtract Natural Set', () => {
     expect(subtractNaturalSet(5, 8)).toBe(0);
   });
 
-  it('should throw an error if the first parameter is an invalid number', () => {
-    expect(subtractNaturalSet('%', 4)).toThrowError('% is not a valid number');
-  });
-
-  it('should throw an error if the second parameter is an invalid number', () => {
-    expect(subtractNaturalSet(5, '$')).toThrowError('$ is not a valid number');
+  it('should subtract decimal numbers', () => {
+    expect(subtractNaturalSet(2, 1.5)).toBe(0.5);
   });
 });

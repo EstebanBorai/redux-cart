@@ -1,5 +1,3 @@
-import ReduxCartError from './ReduxCartError';
-
 /**
  * 
  * @param {Number} a
@@ -11,16 +9,10 @@ import ReduxCartError from './ReduxCartError';
  *
  */
 export function subtractNaturalSet(a, b) {
-	const parsedA = parseInt(a);
-	const parsedB = parseInt(b);
-
-	if (isNaN(parsedA)) {
-		throw new ReduxCartError(`${a} is not a valid number.`);
+	let parsedA = typeof a === 'string' ? parseInt(a) : a;
+	let parsedB = typeof b === 'string' ? parseInt(b) : b;
+	if (isNaN(parsedA) || isNaN(parsedB)) {
+		throw `redux-cart Error: One of two values is not a number.\nReceived:\n${parsedA}\n${parsedB}`;
 	}
-
-	if (isNaN(parsedB)) {
-		throw new ReduxCartError(`${b} is not a valid number.`);
-	}
-
 	return (parsedA - parsedB) < 0 ? 0 : (parsedA - parsedB);
 }

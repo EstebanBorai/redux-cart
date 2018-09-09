@@ -17,22 +17,21 @@ export default function reducer(
 	case REMOVE_FROM_CART: 
 		return cart.delete(action.id.toString());
 	case REMOVE_ITEM:
-		if (cart.has(action.id.toString())) {
+		if (action.quantity !== undefined) {
 			const current = cart.getIn(`${action.id}.quantity`.split('.'));
-			if (action.quantity !== undefined) {
-				let next = subtractNaturalSet(current - action.quantity);
-				if (next === 0) {
-					return cart.delete(action.id.toString());
-				} else {
-					return cart.setIn(`${action.id}.quantity`.split('.'), next);
-				}
+			let next = subtractNaturalSet(current, action.quantity);
+			if (next === 0) {
+				return cart.delete(action.id.toString());
 			} else {
-				let next = subtractNaturalSet(current - 1);
-				if (next === 0) {
-					return cart.delete(action.id.toString());
-				} else {
-					return cart.setIn(`${action.id}.quantity`.split('.'), next);
-				}
+				return cart.setIn(`${action.id}.quantity`.split('.'), next);
+			}
+		} else {
+			const current = cart.getIn(`${action.id}.quantity`.split('.'));
+			let next = subtractNaturalSet(current, 1);
+			if (next === 0) {
+				return cart.delete(action.id.toString());
+			} else {
+				return cart.setIn(`${action.id}.quantity`.split('.'), next);
 			}
 		}
 	default:
