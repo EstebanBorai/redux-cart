@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel ./src --out-dir ./dist",
-    "test": "jest --coverage --watch"
+    "test": "jest --coverage --watch",
+    "build-docs": "gulp",
+    "start-docs": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,11 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.4.2",
     "eslint": "^5.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
     "jest": "^23.5.0",
     "regenerator-runtime": "^0.12.1"
   },

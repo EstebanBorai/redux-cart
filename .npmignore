@@ -4,6 +4,7 @@
 .eslintrc.json
 .gitignore
 .vscode
+docs
 src
 node_modules
 coverage
