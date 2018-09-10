@@ -1,6 +1,6 @@
 {
   "name": "redux-cart",
-  "version": "1.0.0-2",
+  "version": "1.0.0-3",
   "description": "A Shopping Cart Reducer for Redux",
   "main": "dist/index.js",
   "scripts": {
