@@ -4,11 +4,12 @@
     alt="redux-cart logo"
   />
   <h2 align="center">redux-cart</h2>
-  <span align="center">🛒 A Shopping Cart Reducer for Redux</span>
 </p>
+> 🛒 A Shopping Cart Reducer for Redux
 
 ## Installation
 `npm i redux-cart`
 
 ## Documentation
-
+- [Reducer](https://github.com/estebanborai/redux-cart/blob/master/docs/Reducer.md)
+- [Actions](https://github.com/estebanborai/redux-cart/blob/master/docs/Actions.md)
