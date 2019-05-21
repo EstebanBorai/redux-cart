@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gitpullsh/redux-cart.git"
+    "url": "git+https://github.com/estebanborai/redux-cart.git"
   },
   "keywords": [
     "redux",
@@ -19,12 +19,12 @@
     "cart",
     "shopping-cart"
   ],
-  "author": "Esteban Borai <estebanborai@outlook.com> (https://github.com/gitpullsh)",
+  "author": "Esteban Borai <estebanborai@outlook.com> (https://github.com/estebanborai)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gitpullsh/redux-cart/issues"
+    "url": "https://github.com/estebanborai/redux-cart/issues"
   },
-  "homepage": "https://github.com/gitpullsh/redux-cart#readme",
+  "homepage": "https://github.com/estebanborai/redux-cart#readme",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
